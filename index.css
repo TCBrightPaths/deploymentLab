@@ -1,4 +1,7 @@
-#tiger-king {
-    width: 1200px;
-    height: 400px;
+* {
+    background-image: url("https://cdn.vox-cdn.com/thumbor/idxLJoFdaMvYN0UE1o73oWVcu-M=/0x0:1434x804/1200x800/filters:focal(905x194:1133x422)/cdn.vox-cdn.com/uploads/chorus_image/image/66645658/TigerKingAndI.0.png");
+}
+
+h1 {
+    color: azure;
 }
