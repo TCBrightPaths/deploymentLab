@@ -17,13 +17,14 @@ const app = express();
 app.get('/', (req, res) => {
     rollbar.info(`Someone tried to get Tiger King.`)
     //res.sendFile(path.join(__dirname, "../index.html"));
-    try {
-        nonExistentFunction();
-      } catch (error) {
+    nonExistentFunction()
+     .catch (error => {
         console.log(error);
+        rollbar.error(error)
         // expected output: ReferenceError: nonExistentFunction is not defined
         // Note - error messages will vary depending on browser
-      }
+      });
+    res.send('post data');
 });
 
 
