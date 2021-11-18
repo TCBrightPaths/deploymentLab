@@ -7,6 +7,7 @@ var rollbar = new Rollbar({
   captureUncaught: true,
   captureUnhandledRejections: true,
 })
+
 const app = express();
 
 // record a generic message and send it to Rollbar
