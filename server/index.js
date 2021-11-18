@@ -15,7 +15,7 @@ const app = express();
 
 
 app.get('/', (req, res) => {
-    rollbar.info(`Someone tried to get Tiger King.`)
+    
     //res.sendFile(path.join(__dirname, "../index.html"));
     nonExistentFunction()
      .catch (error => {
