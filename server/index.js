@@ -1,6 +1,5 @@
 const express = require('express');
 const path = require('path');
-const app = express();
 
 var Rollbar = require('rollbar')
 var rollbar = new Rollbar({
@@ -8,6 +7,7 @@ var rollbar = new Rollbar({
   captureUncaught: true,
   captureUnhandledRejections: true,
 })
+const app = express();
 
 // record a generic message and send it to Rollbar
 //rollbar.log('Hello world!')
@@ -15,7 +15,7 @@ var rollbar = new Rollbar({
 
 app.get('/', (req, res) => {
     rollbar.info(`Someone tried to get Tiger King.`)
-    res.sendFile(path.join(__dirname, "../index.html"));
+    //res.sendFile(path.join(__dirname, "../index.html"));
     try {
         nonExistentFunction();
       } catch (error) {
