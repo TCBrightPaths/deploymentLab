@@ -16,8 +16,13 @@ var rollbar = new Rollbar({
 app.get('/', (req, res) => {
     rollbar.info(`Someone tried to get Tiger King.`)
     res.sendFile(path.join(__dirname, "../index.html"));
-    doesntExist()
-        .catch(err => rollbar.error(err))
+    try {
+        nonExistentFunction();
+      } catch (error) {
+        Rollbar.error(error);
+        // expected output: ReferenceError: nonExistentFunction is not defined
+        // Note - error messages will vary depending on browser
+      }
 });
 
 
